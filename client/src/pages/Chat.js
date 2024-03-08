@@ -1,8 +1,10 @@
 import React from 'react'
 
+import Navbar from '../components/Navbar'
+
 function Chat() {
   return (
-    <div>CHat</div>
+    <Navbar />
   )
 }
 
