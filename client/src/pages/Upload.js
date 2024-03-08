@@ -4,22 +4,24 @@ import Navbar from '../components/Navbar'
 
 function Upload() {
   const handleFileSubmit = (e) => {
-    e.preventDefault()
+    e.preventDefault();
     const formData = new FormData(e.target);
 
-    fetch('upload_file', {
-      method: 'POST',
-      body: formData
+    // Send formData to your server using an HTTP request (e.g., axios or fetch).
+    // Replace 'YOUR_UPLOAD_API_ENDPOINT' with your actual API endpoint.
+    fetch("http://localhost:5000/upload_file", {
+      method: "POST",
+      body: formData,
     })
-    .then((response) => response.json())
-    .then((data) => {
-      console.log('Success:', data);
-    })
-    .catch((error) => {
-      console.error('Error:', error);
-    });
-
-  }
+      .then((response) => response.json())
+      .then((data) => {
+        // Handle the response from the server.
+        console.log(data);
+      })
+      .catch((error) => {
+        console.error("Error uploading the file:", error);
+      });
+  };
 
   return (
     <div>
